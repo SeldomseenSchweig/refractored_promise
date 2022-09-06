@@ -5,12 +5,10 @@
 class Deck{
     constructor(){
         async function deck(){
-            let res = await axios.get('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
-            
-            this.id = res.data.id
+            let res = await axios.get('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')   
         }
         let res = deck()
-        console.log(res.data.deck_id)
+        this.id = res.data.deckid
          
         this.url = 'https://deckofcardsapi.com/api/deck/'
         }
